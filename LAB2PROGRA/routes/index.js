@@ -3,12 +3,13 @@ const req = require('express/lib/request');
 const res = require('express/lib/response');
 var router = express.Router();
 const async=require('hbs/lib/async');
-const Employee=require('../models/employees');
+const Employee=require('../models/employee');
 
 
 //constantes para las rutas de las paginas, login y register
 const loginP="../views/pages/login";
 const registerP="../views/pages/register";
+const homeRoute="../views/pages/home";
 
 
 /* GET home page. */
@@ -20,14 +21,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/home', function(req,res){
   if(req.employee){
-    res.render('home',{
-      employeeName:req.employee.name,
-
+    res.render(homeRoute,{
+title:"Home", employeeName:req.employee.name
     });
 
   }else{
     res.render(loginP,{
-      message:"Please login to continue",
+      message:"Iniciar sesion para continuar",
       messageClass:"alert alert-danger"
 
     });
@@ -57,10 +57,9 @@ router.post('/register',async(req,res)=>{
       else{
         const hashedPassword=methods.getHashedPassword(password);
         const employeeDB=new Employee({
-          'name':name,
-          'email':email,
-          'password':hashedPassword,
-          'phone':phone
+          name:name,
+          email:email,
+          password:hashedPassword,
         });
         employeeDB.save()
 
@@ -99,7 +98,7 @@ router.post('/login', async(req,res)=>{
 
 router.get('/logout',(req,res)=>{
   res.clearCookie('AuthToken');
-  return res.redirect('/');
+  return res.redirect('/login');
 });
 
 module.exports = router;

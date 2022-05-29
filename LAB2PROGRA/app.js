@@ -12,13 +12,15 @@ const hbs=require('hbs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const { hasSubscribers } = require('diagnostics_channel');
-
+var employeeRouter = require('./routes/employee');
+var fullTimeRouter = require('./routes/fullTimeEmployee');
+var partTimeRouter = require('./routes/partTimeEmployee');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
 hbs.registerPartials(__dirname + '/views/partials',function(err){});
 
 app.use(logger('dev'));
@@ -36,6 +38,9 @@ app.use((req,res,next)=>{
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/employee', employeeRouter);
+app.use('/fullTimeEmployee', fullTimeRouter);
+app.use('/partTimeEmployee', partTimeRouter);
 
 
 // catch 404 and forward to error handler
@@ -45,8 +50,8 @@ app.use(function(req, res, next) {
 
 
 mongoose.connect('mongodb://localhost:27017/employees',{useNewUrlParser:true,useUnifiedTopology:true})
-.then(()=>console.log("connected to mongoDB"))
-.catch((e)=>console.log("error connecting to mongoDB",e))
+.then(()=>console.log("Conexion exitosa con mongoDB"))
+.catch((e)=>console.log("error al conectar con mongoDB",e))
 
 
 
