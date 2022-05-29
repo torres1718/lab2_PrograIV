@@ -1,0 +1,16 @@
+{{>nav}}
+<h2>{{title}}</h2>
+<form action="/fullTimeEmployee" method="post">
+<input type="hidden" name="_id" value="{{fullTimeEmployee._id}}"/>
+Name
+<input type="text" name="name" value="{{fullTimeEmployee.name}}"/>
+LastName
+<input type="text" name="lastName" value="{{fullTimeEmployee.lastName}}"/>
+Annual Salary
+<input type="text" name="annualSalary" value="{{fullTimeEmployee.AnnualSalary}}"/>
+Benfits Category
+<input type="text" name="benefitsCategory" value="{{fullTimeEmployee.BenefitsCategory}}"/>
+
+<button type="submit">Save</button>
+
+</form>

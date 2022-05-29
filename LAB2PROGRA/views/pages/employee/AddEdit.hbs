@@ -1,0 +1,18 @@
+{{>nav}}
+
+<h2>{{title}}</h2>
+
+<form action="/employee" method="post">
+<input type="hidden" name="_id" value="{{employee._id}}"/>
+name
+<input type="text" name="name" value="{{employee.name}}"/>
+email
+<input type="text" name="email" value="{{employee.email}}"/>
+password
+<input type="text" name="password" value="{{employee.password}}"/>
+
+phone
+<input type="text" name="phone" value="{{employee.phone}}"/>
+
+<button type="submit">Save</button>
+</form>

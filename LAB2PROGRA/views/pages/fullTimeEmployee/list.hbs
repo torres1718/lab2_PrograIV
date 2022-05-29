@@ -1,0 +1,30 @@
+{{>nav}}
+<h2>{{title}}</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>lastName</th>
+            <th>benefitsCategory</th>
+            <th>annualSalary</th>
+            <th>Action</th>
+        </tr>
+
+
+    </thead>
+    <tbody>
+        {{#each fullTimeEmployees}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{lastName}}</td>
+            <td>{{BenefitsCategory}}</td>
+            <td>{{AnnualSalary}}</td>
+            <td>
+                <a href="/fullTimeEmployee/{{_id}}">Edit</a>
+                <a href="/fullTimeEmployee/delete/{{_id}}">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+
+</table>

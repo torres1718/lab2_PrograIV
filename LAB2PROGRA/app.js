@@ -12,9 +12,9 @@ const hbs=require('hbs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var employeeRouter = require('./routes/employee');
-var fullTimeRouter = require('./routes/fullTimeEmployee');
-var partTimeRouter = require('./routes/partTimeEmployee');
+var employeeRouter = require('./routes/employees');
+var fullTimeRouter = require('./routes/fullTimeEmployees');
+var partTimeRouter = require('./routes/partTimeEmployees');
 var app = express();
 
 // view engine setup
@@ -24,6 +24,7 @@ app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials',function(err){});
 
 app.use(logger('dev'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

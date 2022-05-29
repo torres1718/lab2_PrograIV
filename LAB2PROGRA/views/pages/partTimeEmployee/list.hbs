@@ -1,0 +1,28 @@
+{{>nav}}
+<h2>{{title}}</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>lastName</th>
+            <th>hourlyRate</th>
+            <th>maxHoursPerWeek</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each partTimeEmployee}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{lastName}}</td>
+            <td>{{HourlyRate}}</td>
+            <td>{{MaxHoursPerWeek}}</td>
+            <td>
+                <a href="/partTimeEmployee/{{_id}}">Edit</a>
+                <a href="/partTimeEmployee/delete/{{_id}}">Delete</a>
+                
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+
+</table>

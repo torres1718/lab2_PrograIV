@@ -1,0 +1,14 @@
+{{>nav}}
+<h2>{{title}}</h2>
+<form action="/partTimeEmployee" method="post">
+<input type="hidden" name="_id" value="{{partTimeEmployee._id}}"/>
+Name
+<input type="text" name="name" value="{{partTimeEmployee.name}}"/>
+LastName
+<input type="text" name="lastName" value="{{partTimeEmployee.lastName}}"/>
+Hourly Rate
+<input type="text" name="hourlyRate" value="{{partTimeEmployee.hourlyRate}}"/>
+Maxx Hours Per Week
+<input type="text" name="maxHoursPerWeek" value="{{partTimeEmployee.maxHoursPerWeek}}"/>
+<button type="submit">Save</button>
+</form>
