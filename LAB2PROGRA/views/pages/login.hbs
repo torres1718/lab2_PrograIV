@@ -1,0 +1,28 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-4">
+        {{#if message}}
+            <div class="alert alert-danger">
+                {{message}}
+            </div>
+        {{/if}}
+        <form action="/login" method="post">
+
+        <!--Nombre del empleado-->
+        <div class="form-group">
+            Nombe: <input type="text" name="name" class="form-control">
+        </div>
+        <!--Contrasenia-->
+        <div class="form-group">
+            Contraseña: <input type="password" name="password" class="form-control">
+        </div>
+        
+        <!--Boton de login-->
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-primary">
+        </div>
+
+        
+        </form>
+        
+    </div>
+</div>

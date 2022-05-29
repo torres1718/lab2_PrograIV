@@ -1,0 +1,16 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #131313;
+  color: #ffffff;
+}
+
+nav{
+  background: #000000;
+  color: white;
+}
