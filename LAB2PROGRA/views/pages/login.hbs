@@ -1,28 +1,38 @@
-<div class="row justify-content-md-center">
-    <div class="col-md-4">
-        {{#if message}}
-            <div class="alert alert-danger" {{messageClass}} >
+<body class="center">
+
+    <div class="form-container">
+        <div class="form-mini">
+
+            {{#if message}}
+            <div class="alert alert-danger" {{messageClass}}>
                 {{message}}
             </div>
-        {{/if}}
-        <form  method="POST" action="/login" >
+            {{/if}}
 
-        <!--Nombre del empleado-->
-        <div class="form-group">
-            Email: <input type="text" name="email" id="email" class="form-control">
-        </div>
-        <!--Contrasenia-->
-        <div class="form-group">
-            Contraseña: <input type="password" name="password" id="password" class="form-control">
-        </div>
-        
-        <!--Boton de login-->
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary">
-        </div>
+            <form method="POST" action="/login">
 
-        
-        </form>
-        
+                <!--Nombre del empleado-->
+               
+                    <h3>Email</h3>
+                    
+                    <input type="text" name="email" id="email" class="form-control">
+             
+                <!--Contrasenia-->
+             
+                    <h3>Contraseña</h3>
+            
+                    <input type="password" name="password" id="password" class="form-control">
+           
+
+                <!--Boton de login-->
+            
+                    <input type="submit" class="btn btn-lg btn-primary">
+       
+
+
+            </form>
+
+        </div>
     </div>
-</div>
+
+</body>

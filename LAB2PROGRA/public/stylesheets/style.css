@@ -7,13 +7,16 @@
 
 html{
  background-color: rgb(30, 30, 30);
+ 
 }
 
 body {
+ 
+  
   padding: 0;
   margin: 0;
   position: sticky;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
   background: rgb(48, 48, 48);
   color: #ffffff;
 }
@@ -57,6 +60,9 @@ p{
  
 }
 
+
+
+
 .post-body-content{
   display: flex;
   align-items: center;
@@ -83,6 +89,7 @@ p{
 
 
 .container{
+
   height: 500px;
   margin: auto;
   padding-top: 10%;
@@ -101,12 +108,15 @@ p{
 }
 .container-2 a{
   text-decoration: none;
-  color: white;
+  color: rgb(0, 144, 154);
   
 }
 
 .container-2 a:hover{
-  color: white;
+  transform: scale(1.3,1.3);
+  transition: 0.3s;
+  color: rgb(12, 227, 242)
+  
   
 }
 
@@ -143,13 +153,72 @@ nav button:hover{
     
 }
 
-footer{
+.footer-container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.container-2 h2{
+  border-bottom: rgb(76, 209, 76);
+  border-bottom-right-radius: 2em;
+  border-bottom-style: ridge;
+  border-bottom-width: 1em;
+}
+
+
+
+.footer *{ 
+  font-size: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
   background-color: rgb(30, 30, 30);
   color: white;
   height: max-content;
 }
 
+
+
 .container-2{
-  padding: 30px 50px;
+  padding: 30px 100px;
 }
 
+
+.form-container{
+  width: 500px;
+  border-radius: 25px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(11, 55, 230, 0.126);
+}
+
+.form-mini{
+  padding: 30px 30px;
+  font-size: 5em;
+  margin: 30px 30px;
+  
+}
+
+.form-mini button{
+  font-size: 3em;
+  
+}
+
+.center{
+  margin-top: 50px;
+  background-color: rgb(30, 30, 30);
+  display: flex;
+  justify-content: center;
+}
+
+#container-reg{
+  font-size: 0.8em;
+  width: 900px;
+  background-color: #29ec5d2e;
+}
+
+.alert{
+  font-size: 0.4em;
+}

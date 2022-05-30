@@ -1,29 +1,33 @@
-<div class="row justify-content-md-center">
-    <div class="col-md-4">
-        {{#if message}}
-        <div class="alert" {{messageClass}}>
-            {{message}}
-        </div>
-        {{/if}}
-        <form action="/register" method="post">
-        <div class="form-group">
-            Nombre: <input type="text" name="name" class="form-control">
-        </div>
-        <div class="form-group">
-            Email: <input type="text" name="email" class="form-control">
-        </div>
-        <div class="form-group">
-            Contraseña: <input type="password" name="password" class="form-control">
-        </div>
-        <div class="form-group">
-            Confirmar Contraseña: <input type="password" name="password_confirmation" class="form-control">
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Registrar" class="btn btn-primary">
-        </div>
-        </form>
+<body class="center">
+
+    <div id="container-reg" class="form-container">
+        <div class="form-mini">
+            {{#if message}}
+            <div class="alert" {{messageClass}}>
+                {{message}}
+            </div>
+            {{/if}}
+            <form action="/register" method="post">
+                <div class="form-group">
+                    Nombre: <input type="text" name="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    Email: <input type="text" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    Contraseña: <input type="password" name="password" class="form-control">
+                </div>
+                <div class="form-group">
+                    Confirmar Contraseña: <input type="password" name="password_confirmation" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registrar" class="btn btn-success">
+                </div>
+            </form>
 
 
 
+        </div>
     </div>
-</div>
+
+</body>

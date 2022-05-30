@@ -1,0 +1,50 @@
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="container-2">
+
+            <h2>Contactenos</h2>
+            <br>
+            <p id="año">&copy;</p>
+            <p>Mauricio Enmanuel Montiel Ruiz</p>
+            <p>Cristobal Josue Torres Hernandez</p>
+            <p>Francisco Alexander Machuca Martinez</p>
+
+        </div>
+
+        <div class="container-2">
+
+            <h2>Vea tambien</h2>
+            <br>
+            
+            <a class="nav-item nav-link active" href="/employee">Añadir Employee </a>
+            <br>
+            <a class="nav-item nav-link" href="/employee/list">Listar Employee</a>
+            <br>
+            <a class="nav-item nav-link" href="/fullTimeEmployee">Añadir fullTimeEmployee</a>
+            <br>
+            <a class="nav-item nav-link " href="/fullTimeEmployee/list">Listar fullTimeEmployee</a>
+            <br>
+            <a class="nav-item nav-link " href="/partTimeEmployee">Añadir partTimeEmployee </a>
+            <br>
+            <a class="nav-item nav-link" href="/partTimeEmployee/list">Listar partTimeEmployee</a>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+</footer>
+
+<script>
+    const fecha = new Date();
+    var Year = console.log(fecha.getFullYear().toString());
+
+    var Copy = document.getElementById("año")
+    Copy.innerHTML += fecha.getFullYear().toString()
+</script>

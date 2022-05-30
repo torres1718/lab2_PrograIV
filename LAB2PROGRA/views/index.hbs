@@ -2,8 +2,8 @@
     <div class="container">
         <p>Si tiene una cuenta inicie sesion</p>
 
-        <button ><a href="/login">Iniciar Sesion</a></button>
-        
+        <button><a href="/login">Iniciar Sesion</a></button>
+
     </div>
 
 </section>
@@ -12,29 +12,44 @@
     <div class="container">
         <p>¿No tiene una cuenta? <br> Cree una cuenta, con nosotros</p>
 
-        <button ><a href="/register"> Registrarse</a></button>
-       
+        <button><a href="/register"> Registrarse</a></button>
+
     </div>
 
 </section>
 
 <footer class="footer">
 
-    <div class="container-2">
-        
-        <p>Contactanos</p>
-        <p>-Mauricio Enmanuel Montiel Ruiz</p>
-        <p>-Cristobal Josue Torres Hernandez</p>
-        <p>-Francisco Alexander Machuca Martinez</p>
+    <div class="footer-container">
+
+        <div class="container-2">
+
+            <h2>Contactenos</h2>
+            <br>
+            <p id="año">&copy;</p>
+            <p>Mauricio Enmanuel Montiel Ruiz</p>
+            <p>Cristobal Josue Torres Hernandez</p>
+            <p>Francisco Alexander Machuca Martinez</p>
+
+        </div>
+
+
+        <div class="container-2">
+            <h2>Informacion</h2>
+
+            <p>Esta pagina, es de referencia para la toma de datos con express,<br>
+                En base al FrameWork de express tomado con fines educativos <br>
+                No tomar como una pagina empresarial</p>
+        </div>
 
     </div>
 
-</footer>
+    <script>
+        const fecha = new Date();
+        var Year = console.log(fecha.getFullYear().toString());
 
+        var Copy = document.getElementById("año")
+        Copy.innerHTML += fecha.getFullYear().toString()
+    </script>
 
-
-{{!-- <div style="margin-top 30px;">   
-<a href="/login" class="btn btn-primary">Login Employee</a>
-<a href="/register" class="btn btn-primary">Register Employee</a>
-
-</div> --}}
+   
