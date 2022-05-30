@@ -6,17 +6,16 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        {{#each employees}}
+        {{#each list}}
         <tr>
-            <td>{{name}}</td>
-            <td>{{email}}</td>
-            <td>{{phone}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.phone}}</td>
             <td>
-                <a href="/employee/{{_id}}">Edit</a>
+                <a href="/employee/{{this._id}}">Edit</a>
                 <a href="/employee/delete/{{_id}}">Delete</a>
             </td>
         </tr>
@@ -24,3 +23,7 @@
     </tbody>
 
 </table>
+
+<br>
+<br>
+<br>

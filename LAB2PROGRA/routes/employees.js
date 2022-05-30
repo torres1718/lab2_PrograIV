@@ -10,7 +10,7 @@ const loginP = "../views/pages/login";
 
 router.get('/', (req, res) => {
     if (req.user) {
-        res.render('pages/employees/AddEdit', {
+        res.render('pages/employee/AddEdit', {
             title: "Add Employee",
         });
     } else {
@@ -25,6 +25,9 @@ router.post('/', (req, res) => {
     if (req.user) {
         if (req.body._id == '')
             newEmployee(req, res)
+        else
+            updateEmployee(req, res)
+
     } else {
         res.render(loginP, {
             message: "Iniciar sesion para continuar",
@@ -50,10 +53,10 @@ function newEmployee(req, res) {
 //funcion para actualizar un empleado
 function updateEmployee(req, res) {
     Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
-        if (err) {
+        if (!err) {
             res.redirect('employee/list');
         } else {
-            res.render('employee/addEdit', {
+            res.render('employee/AddEdit', {
                 title: "Edit Employee",
                 employee: req.body
             })
@@ -88,7 +91,7 @@ router.get('/:id',(req,res)=>{
     if(req.user){
         Employee.findById(req.params.id,(err,doc)=>{
             if(!err){
-                res.render('pages/employee/addEdit',{
+                res.render('pages/employee/AddEdit',{
                     title:"Edit Employee",
                     employee:doc
                 });

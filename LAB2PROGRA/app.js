@@ -32,8 +32,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use((req,res,next)=>{
-  const authToken=req.cookies['authToken'];
-  req.emplooe=methods.authTokens[authToken];
+  const authToken=req.cookies['AuthToken'];
+  req.user=methods.authTokens[authToken];
   next();
 })
 

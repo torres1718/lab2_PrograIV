@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const FullTimeEmployee = require('../models/fullTimeEmployee');
 
 const PartTimeEmployee = require('../models/partTimeEmployee');
 
@@ -25,6 +24,8 @@ router.post('/', (req, res) => {
     if (req.user) {
         if (req.body._id == '')
             newPartTimeEmployee(req, res)
+        else
+            updatePartTimeEmployee(req, res)
     } else {
         res.render(loginP, {
             message: "Iniciar sesion para continuar",
@@ -36,8 +37,8 @@ router.post('/', (req, res) => {
 function newPartTimeEmployee(req, res) {
     var partTimeEmployee = new PartTimeEmployee();
     partTimeEmployee.name = req.body.name;
-    partTimeEmployee.lastName= req.body.lastName;
-    partTimeEmployee.hourlyRate = req.body.hourlyRate;
+    partTimeEmployee.lastName = req.body.lastName;
+    partTimeEmployee.HourlyRate = req.body.HourlyRate;
     partTimeEmployee.MaxHoursPerWeek = req.body.MaxHoursPerWeek;
 
     partTimeEmployee.save((error) => {
@@ -54,7 +55,7 @@ function updatePartTimeEmployee(req, res) {
         if (err) {
             res.redirect('partTimeEmployee/list');
         } else {
-            res.render('partTimeEmployee/addEdit', {
+            res.render('partTimeEmployee/AddEdit', {
                 title: "Edit Part Time Employee",
                 partTimeEmployee: req.body
             })
@@ -65,14 +66,14 @@ function updatePartTimeEmployee(req, res) {
 router.get('/list', (req, res) => {
     if (req.user) {
         PartTimeEmployee.find((err, docs) => {
-            if (!err){
+            if (!err) {
                 res.render('pages/partTimeEmployee/list', {
                     title: "Part Time Employees",
-                    partTimeEmployees: partTimeEmployees
+                    list: docs
                 })
-        }else{
-            console.log("Error"+err);
-        }
+            } else {
+                console.log("Error" + err);
+            }
         });
     } else {
         res.render(loginP, {
@@ -86,7 +87,7 @@ router.get('/:id', (req, res) => {
     if (req.user) {
         PartTimeEmployee.findById(req.params.id, (err, doc) => {
             if (!err) {
-                res.render('pages/partTimeEmployee/addEdit', {
+                res.render('pages/partTimeEmployee/AddEdit', {
                     title: "Edit Part Time Employee",
                     partTimeEmployee: doc
                 })
@@ -100,9 +101,9 @@ router.get('/:id', (req, res) => {
     }
 })
 router.get('/delete/:id', (req, res) => {
-    FullTimeEmployee.findByIdAndRemove(req.params.id, (err, doc) => {
+    PartTimeEmployee.findByIdAndDelete(req.params.id, (err, doc) => {
         if (!err) {
-            res.redirect('/fullTimeEmployee/list');
+            res.redirect('/partTimeEmployee/list');
         } else {
             console.log("Error" + err);
         }

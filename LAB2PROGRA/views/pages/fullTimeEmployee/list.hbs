@@ -14,17 +14,21 @@
 
     </thead>
     <tbody>
-        {{#each fullTimeEmployees}}
+        {{#each list}}
         <tr>
-            <td>{{name}}</td>
-            <td>{{lastName}}</td>
-            <td>{{BenefitsCategory}}</td>
-            <td>{{AnnualSalary}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.AnnualSalary}}</td>
+            <td>{{this.BenefitsCategory}}</td>
+
             <td>
-                <a href="/fullTimeEmployee/{{_id}}">Edit</a>
+                <a href="/fullTimeEmployee/{{this._id}}">Edit</a>
                 <a href="/fullTimeEmployee/delete/{{_id}}">Delete</a>
             </td>
         </tr>
         {{/each}}
 
 </table>
+<br>
+<br>
+<br>

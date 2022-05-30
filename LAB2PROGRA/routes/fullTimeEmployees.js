@@ -24,6 +24,9 @@ router.post('/',(req,res)=>{
     if(req.user){
         if(req.body._id == '')
             newFullTimeEmployee(req, res)
+        else
+            updateFullTimeEmployee(req, res)
+
     }else{
         res.render(loginP,{
         message:"Iniciar sesion para continuar",
@@ -37,7 +40,7 @@ function newFullTimeEmployee(req, res) {
     var fullTimeEmployee = new FullTimeEmployee();
     fullTimeEmployee.name = req.body.name;
     fullTimeEmployee.lastName = req.body.lastName;
-    fullTimeEmployee.Annualsalary = req.body.Annualsalary;
+    fullTimeEmployee.AnnualSalary = req.body.AnnualSalary;
     fullTimeEmployee.BenefitsCategory = req.body.BenefitsCategory;
 
     fullTimeEmployee.save((error) => {
@@ -51,10 +54,10 @@ function newFullTimeEmployee(req, res) {
 //funcion para actualizar un empleado de tipo Full Time
 function updateFullTimeEmployee(req, res) {
     FullTimeEmployee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
-        if (err) {
+        if (!err) {
             res.redirect('fullTimeEmployee/list');
         } else {
-            res.render('fullTimeEmployee/addEdit', {
+            res.render('fullTimeEmployee/AddEdit', {
                 title: "Edit Full Time Employee",
                 fullTimeEmployee: req.body
             })
@@ -66,11 +69,11 @@ function updateFullTimeEmployee(req, res) {
 
 router.get('/list',(req,res)=>{
     if(req.user){
-        FullTimeEmployee.find((err,docs)=>{
+        FullTimeEmployee.find((err,doc)=>{
             if(!err){
                 res.render('pages/fullTimeEmployee/list',{
                     title:"Full Time Employees",
-                    fullTimeEmployees:fullTimeEmployees
+                    list:doc
                 })
             }else{
                 console.log("Error" +err);
@@ -88,7 +91,7 @@ router.get('/:id',(req,res)=>{
     if(req.user){
         FullTimeEmployee.findById(req.params.id,(err,doc)=>{
             if(!err){
-                res.render('pages/fullTimeEmployee/addEdit',{
+                res.render('pages/fullTimeEmployee/AddEdit',{
                     title:"Edit Full Time Employee",
                     fullTimeEmployee:doc
                 })

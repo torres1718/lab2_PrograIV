@@ -10,14 +10,14 @@
         </tr>
     </thead>
     <tbody>
-        {{#each partTimeEmployee}}
+        {{#each list}}
         <tr>
-            <td>{{name}}</td>
-            <td>{{lastName}}</td>
-            <td>{{HourlyRate}}</td>
-            <td>{{MaxHoursPerWeek}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.HourlyRate}}</td>
+            <td>{{this.MaxHoursPerWeek}}</td>
             <td>
-                <a href="/partTimeEmployee/{{_id}}">Edit</a>
+                <a href="/partTimeEmployee/{{this._id}}">Edit</a>
                 <a href="/partTimeEmployee/delete/{{_id}}">Delete</a>
                 
             </td>
@@ -26,3 +26,6 @@
     </tbody>
 
 </table>
+<br>
+<br>
+<br>
