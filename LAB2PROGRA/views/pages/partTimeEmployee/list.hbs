@@ -1,31 +1,38 @@
 {{>nav}}
-<h2>{{title}}</h2>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>lastName</th>
-            <th>hourlyRate</th>
-            <th>maxHoursPerWeek</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each list}}
-        <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.lastName}}</td>
-            <td>{{this.HourlyRate}}</td>
-            <td>{{this.MaxHoursPerWeek}}</td>
-            <td>
-                <a href="/partTimeEmployee/{{this._id}}">Edit</a>
-                <a href="/partTimeEmployee/delete/{{_id}}">Delete</a>
-                
-            </td>
-        </tr>
-        {{/each}}
-    </tbody>
+<div class="center">
+    <div class="form-container">
 
-</table>
-<br>
-<br>
-<br>
+        <h2>{{title}}</h2>
+
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>lastName</th>
+                    <th>hourlyRate</th>
+                    <th>maxHoursPerWeek</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each list}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.HourlyRate}}</td>
+                    <td>{{this.MaxHoursPerWeek}}</td>
+                    <td>
+                        <a class="btn btn-success" role="button" href="/partTimeEmployee/{{this._id}}">Edit</a>
+                        <a class="btn btn-danger" role="button" href="/partTimeEmployee/delete/{{_id}}">Delete</a>
+
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+{{>footer}}
+

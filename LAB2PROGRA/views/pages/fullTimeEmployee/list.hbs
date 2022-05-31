@@ -1,34 +1,37 @@
 {{>nav}}
-<h2>{{title}}</h2>
+<div class="center">
+    <div class="form-container">
+        <h2>{{title}}</h2>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>lastName</th>
-            <th>benefitsCategory</th>
-            <th>annualSalary</th>
-            <th>Action</th>
-        </tr>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>lastName</th>
+                    <th>benefitsCategory</th>
+                    <th>annualSalary</th>
+                    <th>Action</th>
+                </tr>
 
 
-    </thead>
-    <tbody>
-        {{#each list}}
-        <tr>
-            <td>{{this.name}}</td>
-            <td>{{this.lastName}}</td>
-            <td>{{this.AnnualSalary}}</td>
-            <td>{{this.BenefitsCategory}}</td>
+            </thead>
+            <tbody>
+                {{#each list}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.lastName}}</td>
+                    <td>{{this.AnnualSalary}}</td>
+                    <td>{{this.BenefitsCategory}}</td>
 
-            <td>
-                <a href="/fullTimeEmployee/{{this._id}}">Edit</a>
-                <a href="/fullTimeEmployee/delete/{{_id}}">Delete</a>
-            </td>
-        </tr>
-        {{/each}}
+                    <td>
+                        <a class="btn btn-success" role="button" href="/fullTimeEmployee/{{this._id}}">Edit</a>
+                         <a class="btn btn-danger" role="button" href="/fullTimeEmployee/delete/{{_id}}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
 
-</table>
-<br>
-<br>
-<br>
+        </table>
+    </div>
+</div>
+
+{{>footer}}
