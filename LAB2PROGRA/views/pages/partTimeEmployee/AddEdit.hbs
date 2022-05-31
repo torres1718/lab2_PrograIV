@@ -1,14 +1,39 @@
 {{>nav}}
-<h2>{{title}}</h2>
-<form action="/partTimeEmployee" method="post">
-<input type="hidden" name="_id" value="{{partTimeEmployee._id}}"/>
-Name
-<input type="text" name="name" value="{{partTimeEmployee.name}}"/>
-LastName
-<input type="text" name="lastName" value="{{partTimeEmployee.lastName}}"/>
-Hourly Rate
-<input type="text" name="HourlyRate" value="{{partTimeEmployee.HourlyRate}}"/>
-Maxx Hours Per Week
-<input type="text" name="MaxHoursPerWeek" value="{{partTimeEmployee.MaxHoursPerWeek}}"/>
-<button type="submit">Save</button>
-</form>
+
+
+<div class="center">
+
+    <div class="form-container " id="form-add-3">
+
+        <div class="form-mini">
+
+            <h2>{{title}}</h2>
+
+            <form action="/fullTimeEmployee" method="POST">
+
+                <input type="hidden" name="_id" value="{{partTimeEmployee._id}}" />
+                <h3>Name</h3>
+
+                <input type="text" name="name" value="{{partTimeEmployee.name}}" class="form-control"/>
+                <h3>Apellido</h3>
+
+                <input type="text" name="lastName" value="{{partTimeEmployee.lastName}}" class="form-control"/>
+                <h3>Tarifa por hora</h3>
+
+                <input type="text" name="HourlyRate" value="{{partTimeEmployee.HourlyRate}}" class="form-control"/>
+                
+                <h3>Maximo de horas por semana</h3>
+
+                <input type="text" name="MaxHoursPerWeek" value="{{partTimeEmployee.MaxHourPerWeek}}" class="form-control"/>
+              
+
+                <input type="submit" value="Enviar" class="btn btn-lg btn-success">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{{>footer}}

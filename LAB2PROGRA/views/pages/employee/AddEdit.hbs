@@ -1,18 +1,36 @@
 {{>nav}}
 
-<h2>{{title}}</h2>
 
-<form action="/employee" method="post">
-<input type="hidden" name="_id" value="{{employee._id}}"/>
-name
-<input type="text" name="name" value="{{employee.name}}"/>
-email
-<input type="text" name="email" value="{{employee.email}}"/>
-password
-<input type="text" name="password" value="{{employee.password}}"/>
 
-phone
-<input type="text" name="phone" value="{{employee.phone}}"/>
+<div class="center" >
 
-<button type="submit">Save</button>
-</form>
+
+    <div class="form-container" id="form-add">
+        <div class="form-mini" >
+
+            <h2>{{title}}</h2>
+
+            <form action="/employee" method="post">
+                <input type="hidden" name="_id" value="{{employee._id}}" />
+                <h3>Nombre</h3>
+                <input type="text" name="name" value="{{employee.name}}" class="form-control"/>
+                <h3>Email</h3>
+                <input type="text" name="email" value="{{employee.email}}" class="form-control"/>
+                <h3>Contraseña</h3>
+                <input type="text" name="password" value="{{employee.password}}" class="form-control"/>
+                <h3>Telefono</h3>
+                <input type="text" name="phone" value="{{employee.phone}}" class="form-control"/>
+            
+                <input type="submit" class="btn btn-lg btn-success"></input>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+{{>footer}}

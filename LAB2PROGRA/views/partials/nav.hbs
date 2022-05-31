@@ -1,25 +1,81 @@
-
 <header>
-   
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/employee">Añadir Employee </a>
-      <a class="nav-item nav-link" href="/employee/list">Listar Employee</a>
-      <a class="nav-item nav-link" href="/fullTimeEmployee">Añadir fullTimeEmployee</a>
-      <a class="nav-item nav-link " href="/fullTimeEmployee/list">Listar fullTimeEmployee</a>
-      <a class="nav-item nav-link " href="/partTimeEmployee">Añadir partTimeEmployee </a>
-      <a class="nav-item nav-link" href="/partTimeEmployee/list">Listar partTimeEmployee</a>
-      <ul class="right-ul">
-            <li>
-                <button href="">Contactanos</button>
-            </li>
-        </ul>
+
+  <nav class="navbar navbar-expand-lg justify-content-between mb-3">
+
+
+
+    <div class="p-2">
+      <ul>
+        <a class="navbar-brand " href="/home">Home</a>
+
+      </ul>
+
     </div>
-  </div>
-</nav>
+
+    <div class="p-2">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown ">
+
+            <a class="nav-link  navbar-effect" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              AgregarEmployee
+            </a>
+            <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item navbar-effect" href="/employee" id="drop-item">Añadir
+                  Employee</a></li>
+              <li><a class="dropdown-item navbar-effect" href="/employee/list" id="drop-item">Listar
+                  Employee</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link navbar-effect" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              fullTimeEmployee
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item navbar-effect" href="/fullTimeEmployee" id="drop-item">Añadir
+                  FullTime</a></li>
+              <li><a class="dropdown-item navbar-effect" href="/fullTimeEmployee/list" id="drop-item">Listar
+                  FullTime</a></li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link navbar-effect" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              partTimeEmployee
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item navbar-effect" href="/partTimeEmployee" id="drop-item">Añadir
+                  Part</a></li>
+              <li><a class="dropdown-item navbar-effect" href="/partTimeEmployee/list" id="drop-item">Listar Part</a>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+
+  </nav>
+
+
+
 </header>
+
+
+{{!--
+<a class="nav-item nav-link active" href="/employee">Añadir Employee </a>
+<a class="nav-item nav-link" href="/employee/list">Listar Employee</a>
+<a class="nav-item nav-link" href="/fullTimeEmployee">Añadir fullTimeEmployee</a>
+<a class="nav-item nav-link " href="/fullTimeEmployee/list">Listar fullTimeEmployee</a>
+<a class="nav-item nav-link " href="/partTimeEmployee">Añadir partTimeEmployee </a>
+<a class="nav-item nav-link" href="/partTimeEmployee/list">Listar partTimeEmployee</a> --}}
